@@ -7,8 +7,8 @@ import { Triple } from '../triple';
 
 @Component({
   selector: 'app-triple-edit',
-  templateUrl: 'triple.edit.component.html',
-  styleUrls: ['triple.edit.component.css']
+  templateUrl: 'triple-edit.component.html',
+  styleUrls: ['triple-edit.component.css']
 
 })
 export class TripleEditComponent implements OnInit {

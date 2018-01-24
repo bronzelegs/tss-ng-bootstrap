@@ -8,8 +8,8 @@ import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-triple-detail',
-  templateUrl: 'triple.detail.component.html',
-  styleUrls: ['triple.detail.component.css']
+  templateUrl: 'triple-detail.component.html',
+  styleUrls: ['triple-detail.component.css']
   //encapsulation: ViewEncapsulation.Native
 })
 export class TripleDetailComponent implements OnInit {

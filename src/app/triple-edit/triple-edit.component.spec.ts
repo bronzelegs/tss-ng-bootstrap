@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule} from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
-import { TripleEditComponent } from './triple.edit.component';
+import { TripleEditComponent } from './triple-edit.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('TripleEditComponent', () => {

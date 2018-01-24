@@ -1,0 +1,67 @@
+<div class="container">
+  <h3>Triple List
+    <a [routerLink]="['/triple-create']" button type="button" class="btn btn-outline-primary">
+      <span class="oi oi-plus"></span>
+    </a>
+  
+  
+  </h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let triple of triples$ | async">
+      <td>{{ triple.subj }}</td>
+      <td>{{ triple.pred }}</td>
+      <td>{{ triple.obj }}</td>
+      
+      
+      <td class="action">
+        <button [routerLink]="['/triple-edit', triple._id]" class="btn btn-link">
+          <span class="oi oi-pencil"></span></button>
+      </td>
+      <td class="action">
+        <button [routerLink]="['/triple-detail', triple._id]" class="btn btn-link">
+          <span class="oi oi-list"></span></button>
+      </td>
+      <td class="action">
+        <button class="btn btn-link" (click)="delete(triple._id)">
+          <span class="oi oi-x"></span></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+
+</div>
+
+
+<p>
+  <ngb-alert *ngIf="failMessage" type="error" (close)="successMessage = null">{{ errorMessage }}</ngb-alert>
+<p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Please confirm or cancel.</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Do you want to delete this triple?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('confirm')">Confirm</button>
+    
+    <button type="button" class="btn btn-outline-dark" (click)="c('cancel')">Cancel</button>
+  </div>
+
+
+</ng-template>
+
+

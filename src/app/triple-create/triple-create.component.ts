@@ -6,8 +6,8 @@ import {Triple} from '../triple';
 
 @Component({
   selector: 'app-triple-create',
-  templateUrl: 'triple.create.component.html',
-  styleUrls: ['triple.create.component.css'],
+  templateUrl: 'triple-create.component.html',
+  styleUrls: ['triple-create.component.css'],
 
 })
 export class TripleCreateComponent implements OnInit {

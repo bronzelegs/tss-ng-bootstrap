@@ -7,11 +7,12 @@ import {AppComponent} from './app.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
-import {TripleListComponent} from './triple.list/triple.list.component';
-import {TripleDetailComponent} from './triple.detail/triple.detail.component';
-import {TripleEditComponent} from './triple.edit/triple.edit.component';
-import {TripleCreateComponent} from './triple.create/triple.create.component';
+import {TripleListComponent} from './triple-list/triple-list.component';
+import {TripleDetailComponent} from './triple-detail/triple-detail.component';
+import {TripleEditComponent} from './triple-edit/triple-edit.component';
+import {TripleCreateComponent} from './triple-create/triple-create.component';
 import {TriplesService} from './triples.service';
+import { ConfirmModalContent } from './confirm-modal/confirm-modal.component';
 
 
 const appRoutes: Routes = [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     TripleDetailComponent,
     TripleEditComponent,
     TripleCreateComponent,
+    ConfirmModalContent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,8 @@ const appRoutes: Routes = [
       {enableTracing: true} // <-- debugging purposes only
     ),
   ],
+
+  entryComponents: [ ConfirmModalContent],
 
   providers: [TriplesService],
   bootstrap: [AppComponent]
