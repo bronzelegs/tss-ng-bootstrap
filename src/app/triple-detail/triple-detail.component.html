@@ -2,7 +2,7 @@
   <h3>Triple
     <a [routerLink]="['/triples']" class="btn btn-link btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
   </h3>
-  
+
   <dl class="list">
     <tr>
     <dt>Subject</dt>
@@ -28,9 +28,7 @@
   <div class="row">
     <div class="col-md-12">
       <a [routerLink]="['/triple-edit', triple._id]" button class="btn btn-success">Edit</a>
-      <button class="btn btn-danger" type="button" (click)="deleteTriple(triple._id)">Delete</button>
+      <!--button class="btn btn-danger" type="button" (click)="deleteTriple(triple._id)">Delete</button-->
     </div>
   </div>
 </div>
-
-

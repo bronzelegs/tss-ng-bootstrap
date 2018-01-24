@@ -28,8 +28,10 @@ export class TripleDetailComponent implements OnInit {
     this.triple = this.triplesService.get(this.route.snapshot.params['id']);
   }
 
+  /*
   deleteTriple(id) {
     this.triplesService.remove(id);
     this.router.navigate(['triples']);
   }
+  */
 }
