@@ -1,0 +1,37 @@
+<div class="container">
+  <h3>Triple List
+    <a [routerLink]="['/triple-create']" button type="button" class="btn btn-outline-primary">
+      <span class="oi oi-plus"></span>
+    </a>
+  
+    
+    
+  </h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let triple of triples$ | async">
+      <td>{{ triple.subj }}</td>
+      <td>{{ triple.pred }}</td>
+      <td>{{ triple.obj }}</td>
+
+      
+      <td class="action"><button [routerLink]="['/triple-edit', triple._id]"  class="btn btn-link">
+        <span class="oi oi-pencil"></span></button></td>
+      <td class="action"><button [routerLink]="['/triple-detail', triple._id]"  class="btn btn-link">
+        <span class="oi oi-list"></span></button></td>
+      <td class="action"><button  class="btn btn-link" (click)="delete(triple._id)">
+        <span class="oi oi-x" ></span></button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

@@ -1,0 +1,6 @@
+dt {
+  padding-right:20px;
+}
+tr:nth-child(even) {
+  background-color: white;
+}

@@ -1,0 +1,11 @@
+tr {
+  padding-top:0px;
+}
+tr:nth-child(even) {
+  background-color: rgba(215, 245, 255, 0.31);
+}
+
+.action {
+  padding: 0px;
+  width: 5px;
+}
