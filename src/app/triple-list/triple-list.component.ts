@@ -22,6 +22,8 @@ export class TripleListComponent implements OnInit {
 
   private _success = new Subject<string>();
   successMessage: string;
+  private _error = new Subject<string>();
+  errorMessage: string;
 
   constructor(private http: HttpClient,
               private triplesService: TriplesService,
@@ -32,8 +34,12 @@ export class TripleListComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngoninit');
+
     this._success.subscribe((message) => this.successMessage = message);
-    debounceTime.call(this._success, 5000).subscribe(() => {this.successMessage = null;console.log('fired');});
+    debounceTime.call(this._success, 5000).subscribe(() => this.successMessage = null);
+
+    this._error.subscribe((message) => this.errorMessage = message);
+    debounceTime.call(this._error, 5000).subscribe(() => this.errorMessage = null);
 
     this.triples$ = this.triplesService.triples;
     this.triplesService.loadAll();
@@ -44,7 +50,9 @@ export class TripleListComponent implements OnInit {
       if (ans === 'Confirm') {
         this.triplesService.remove(id);
         this.router.navigate(['triples']);
-        this.successMessage = 'triple deleted';
+        this._success.next(`${new Date()} - triple deleted.`);
+      } else {
+        this._error.next(`${new Date()} - triple not deleted.`);
       }
     });
   }
