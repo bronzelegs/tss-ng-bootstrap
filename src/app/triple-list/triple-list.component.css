@@ -1,6 +1,13 @@
 tr {
   padding-top:0px;
 }
+thead {
+  border: none
+}
+th {
+  border-top: none;
+  border-bottom: none;
+}
 tr:nth-child(even) {
   background-color: rgba(215, 245, 255, 0.31);
 }
