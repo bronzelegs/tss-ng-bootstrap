@@ -1,8 +1,8 @@
 
 <div class="container">
   <h3>Add New Triple
-    <a [routerLink]="['/triples']" class="btn btn-link btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-
+    <a [routerLink]="['/triples']" class="btn btn-link btn-sm">
+      <span class="oi oi-chevron-left"></span>
     </a>
   </h3>
   <div class="row">
@@ -20,7 +20,7 @@
           <label for="name">Object</label>
           <input type="text" class="form-control" [(ngModel)]="triple.obj" name="object" required>
         </div>
-       
+
         <div class="form-group">
           <!--button type="submit" class="btn btn-success" [disabled]="\\">Save</button-->
           <button type="submit" class="btn btn-success" >Save</button>
@@ -29,5 +29,3 @@
     </div>
   </div>
 </div>
-
-

@@ -1,6 +1,7 @@
 <div class="container">
   <h3>Edit Triple
-    <a [routerLink]="['/triples']" class="btn btn-outline-dark btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></h3>
+    <a [routerLink]="['/triples']" class="btn btn-sm">
+      <span class="oi oi-chevron-left"></span></a></h3>
   <div class="row">
     <div class="col-md-6">
       <form (ngSubmit)="updateTriple(triple._id)" #tripleForm="ngForm">
